@@ -27,6 +27,7 @@
 
 ## Решение
 
+```
 Сотрудники (
     id SERIAL PRIMARY KEY,
     фамилия VARCHAR(50),
@@ -36,5 +37,5 @@
     оклад NUMERIC(10, 2),
     должность_id INTEGER REFERENCES Должности(id),
     подразделение_id INTEGER REFERENCES Подразделения(id)
-)
-``
+);
+```
