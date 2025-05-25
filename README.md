@@ -25,6 +25,16 @@
 - ...
 - идентификатор структурного подразделения, внешний ключ, integer).
 
+## Решение
 
----
+Сотрудники (
+    id SERIAL PRIMARY KEY,
+    фамилия VARCHAR(50),
+    имя VARCHAR(50),
+    отчество VARCHAR(50),
+    дата_найма DATE,
+    оклад NUMERIC(10, 2),
+    должность_id INTEGER REFERENCES Должности(id),
+    подразделение_id INTEGER REFERENCES Подразделения(id)
+);
 
