@@ -39,3 +39,52 @@
     подразделение_id INTEGER REFERENCES Подразделения(id)
 );
 ```
+
+```
+Подразделения (
+    id SERIAL PRIMARY KEY,
+    название VARCHAR(100),
+    тип_подразделения_id INTEGER REFERENCES Типы_подразделений(id),
+    адрес_филиала_id INTEGER REFERENCES Адреса_филиалов(id)
+);
+```
+
+```
+Типы_подразделений (
+    id SERIAL PRIMARY KEY,
+    тип VARCHAR(50)
+);
+```
+
+```
+Проекты (
+    id SERIAL PRIMARY KEY,
+    название VARCHAR(200),
+    описание TEXT
+);
+```
+
+```
+Адреса_филиалов (
+    id SERIAL PRIMARY KEY,
+    адрес VARCHAR(200)
+);
+```
+
+```
+Должности (
+    id SERIAL PRIMARY KEY,
+    название VARCHAR(100),
+    уровень VARCHAR(50)
+);
+```
+
+```
+Назначения_на_проекты (
+    id SERIAL PRIMARY KEY,
+    сотрудник_id INTEGER REFERENCES Сотрудники(id),
+    проект_id INTEGER REFERENCES Проекты(id),
+    дата_начала DATE,
+    дата_окончания DATE
+);
+```
